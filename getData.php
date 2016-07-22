@@ -14,7 +14,7 @@
 		while($res=mysqli_fetch_array($r)){
 			$row=array(
 			"username"=>$res['username'],
-			"pasword"=>$res['pasword'],
+			"password"=>$res['password'],
 			"fullname"=>$res['fullname']
 			);
 			$data[]=$row;
@@ -27,3 +27,5 @@
 		mysqli_close($con);
 		
 	}
+
+	?>

@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.1.13-MariaDB : Database - androidapp
+MySQL - 5.7.19 : Database - test
 *********************************************************************
 */
 
@@ -12,9 +12,9 @@ MySQL - 5.5.5-10.1.13-MariaDB : Database - androidapp
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`androidapp` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`test` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `androidapp`;
+USE `test`;
 
 /*Table structure for table `biodata` */
 
@@ -45,7 +45,7 @@ CREATE TABLE `mahasiswa` (
 
 /*Data for the table `mahasiswa` */
 
-insert  into `mahasiswa`(`npm`,`nama`,`kelas`,`sesi`) values ('100','Rafles','IIA','siang'),('101','Budi','IIA','Pagi'),('102','mira santika','3A','siang'),('200','Rere','5B','Pagi (09.00-11.00 WI'),('300','Andi','5B','Siang (13.00-15.00 W'),('8080','Ratarara','YGH','Pagi (09.00-11.00 WI');
+insert  into `mahasiswa`(`npm`,`nama`,`kelas`,`sesi`) values ('100','Rafles Nainggilan','IIA','Siangs'),('101','Budi jahhhh','IIA','Pagi'),('103','mawar','IIA','Pagi'),('104','Andi Mala','6B','Siangs'),('106','Rahmat','7B','Siang');
 
 /*Table structure for table `ms_user` */
 

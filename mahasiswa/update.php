@@ -2,16 +2,16 @@
 
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 		//Mendapatkan Nilai Variable
-   $nim = $_POST['nim'];
+   $npm = $_POST['npm'];
    $nama = $_POST['nama'];
    $kelas = $_POST['kelas'];
-   $sesi = $_POST['sesi'];
+   $sesi = 'Siangs';//$_POST['sesi'];
 		
 		//import file koneksi database 
 		require_once('koneksi.php');
 		
 		//Membuat SQL Query
-		$sql = "UPDATE mahasiswa SET nama = '$nama', kelas = '$kelas', sesi = '$sesi' WHERE nim ='$nim'";
+		$sql = "UPDATE mahasiswa SET nama = '$nama', kelas = '$kelas', sesi = '$sesi' WHERE npm ='$npm'";
 		
 		//Meng-update Database 
 		if(mysqli_query($con,$sql)){

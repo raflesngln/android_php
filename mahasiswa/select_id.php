@@ -1,13 +1,13 @@
 <?php
 	include "koneksi.php";
 	
-	//Mendapatkan Nilai nim
-	$nim = $_POST['nim'];
+	//Mendapatkan Nilai npm
+	$npm = $_POST['npm'];
 	
 
 	
 	//Membuat SQL Query dengan pegawai yang ditentukan secara spesifik sesuai ID
-	$sql = "SELECT * FROM mahasiswa WHERE nama LIKE '$nim%'";
+	$sql = "SELECT * FROM mahasiswa WHERE nama LIKE '$npm%'";
 	
 	//Mendapatkan Hasil 
 	$r = mysqli_query($con,$sql);
@@ -16,7 +16,7 @@
 	$result = array();
 	$row = mysqli_fetch_array($r);
 	array_push($result,array(
-			"nim"=>$row['nim'],
+			"npm"=>$row['npm'],
 			"nama"=>$row['nama'],
 			"kelas"=>$row['kelas'],
 			"sesi"=>$row['sesi']

@@ -7,26 +7,28 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
    $npm = $_POST['npm'];
    $nama = $_POST['nama'];
    $kelas = $_POST['kelas'];
-   $sesi = $_POST['sesi'];
+   $sesi = 'Siang';//$_POST['sesi'];
 
    require_once('koneksi.php');
    //Cek npm sudah terdaftar apa belum
    $sql = "SELECT * FROM mahasiswa WHERE npm ='$npm'";
    $check = mysqli_fetch_array(mysqli_query($con,$sql));
    if(isset($check)){
-		     $response["value"] = 0;
-		     $response["message"] = "oops! npm sudah terdaftar!";
-		     echo json_encode($response);
+     $response["value"] = 0;
+     $response["message"] = "oops! NPM sudah terdaftar,coba yg nomor lain!";
+     echo json_encode($response);
    } else {
-		     $sql = "INSERT INTO mahasiswa (npm,nama,kelas,sesi) VALUES('$npm','$nama','$kelas','$sesi')";
-		     if(mysqli_query($con,$sql)) {
-		       $response["value"] = 1;
-		       $response["message"] = "Data Tersimpan broo !";
-		       echo json_encode($response);
+     $sql2 = "INSERT INTO mahasiswa VALUES ('$npm','$nama','$kelas','$sesi')";
+     $simpan = mysqli_query($con,$sql2);
+     //echo json_encode(array("value"=>1,"message"=>'Sukses mendaftar'));
+     if($simpan) {
+       $response["value"] = 1;
+       $response["message"] = "Sukses mendaftar";
+       echo json_encode($response);
      } else {
-		       $response["value"] = 0;
-		       $response["message"] = "oops! Coba lagi!";
-		       echo json_encode($response);
+       $response["value"] = 0;
+       $response["message"] = "oops! Gagal simpan data!";
+       echo json_encode($response);
      }
    }
    // tutup database
@@ -36,5 +38,4 @@ if($_SERVER['REQUEST_METHOD']=='POST') {
   $response["message"] = "oops! Coba lagi!";
   echo json_encode($response);
 }
-
 ?>

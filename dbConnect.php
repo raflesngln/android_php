@@ -2,10 +2,10 @@
 
 <?php
 
-$db_server="localhost";
-$db_user="root";
-$db_pass="";
-$db="androidapp";
+$db_server="10.0.0.28";
+$db_user="wisnu";
+$db_pass="baldas";
+$db="test";
 
 $con=mysqli_connect($db_server,$db_user,$db_pass,$db);
 

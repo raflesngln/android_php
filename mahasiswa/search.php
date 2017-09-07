@@ -1,30 +1,24 @@
 <?php
 	include "koneksi.php";
 	
-	//Mendapatkan Nilai nim
-	$nim = $_POST['nim'];
+	//Mendapatkan Nilai npm
+	$search = $_POST['search'];
 	
+		if($search==''){
+			$sql = "SELECT * FROM mahasiswa";
+		} else {
+			$sql = "SELECT * FROM mahasiswa WHERE nama LIKE '$search%' OR npm LIKE '$search%'";
+		}
 
-	
-	//Membuat SQL Query dengan pegawai yang ditentukan secara spesifik sesuai ID
-	$sql = "SELECT * FROM mahasiswa WHERE nama LIKE '$nim%'";
-	
-	//Mendapatkan Hasil 
-	$r = mysqli_query($con,$sql);
-	
-	//Memasukkan Hasil Kedalam Array
-	$result = array();
-	$row = mysqli_fetch_array($r);
-	array_push($result,array(
-			"nim"=>$row['nim'],
-			"nama"=>$row['nama'],
-			"kelas"=>$row['kelas'],
-			"sesi"=>$row['sesi']
-		));
+	$res = mysqli_query($con,$sql);
+	  $result = array();
+	  while($row = mysqli_fetch_array($res)){
+	    array_push($result, array('npm'=>$row[0], 'nama'=>$row[1], 'kelas'=>$row[2], 'sesi'=>$row[3]));
+	  }
+  echo json_encode(array("value"=>1,"result"=>$result));
 
-	//Menampilkan dalam format JSON
-	//echo json_encode(array('result'=>$result));
-	echo json_encode(array("value"=>1,"result"=>$result));
-	
+
+
+
 	mysqli_close($con);
 ?>

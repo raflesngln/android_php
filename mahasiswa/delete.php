@@ -1,13 +1,13 @@
 <?php 
 
  //Mendapatkan Nilai ID
- $nim = $_POST['nim'];
+ $npm = $_POST['npm'];
  
  //Import File Koneksi Database
  require_once('koneksi.php');
  
  //Membuat SQL Query
- $sql = "DELETE FROM mahasiswa WHERE nim='$nim'";
+ $sql = "DELETE FROM mahasiswa WHERE npm='$npm'";
 
  
  //Menghapus Nilai pada Database 

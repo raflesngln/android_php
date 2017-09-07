@@ -2,19 +2,19 @@
 
 	if($_SERVER['REQUEST_METHOD']=='GET'){
 		
-		$id  = $_GET['id'];
-		//$id  = isset($_GET['id'])?$_GET['id']:'';
+		// $id  = $_GET['id'];
+		// //$id  = isset($_GET['id'])?$_GET['id']:'';
 
-		if (isset($id)) {
-			$where="where id='$id'";
-		} else{
-			$where= "where id >=1";
-		}
+		// if (isset($id)) {
+		// 	$where="where id='$id'";
+		// } else{
+		// 	$where= "where id >=1";
+		// }
 		
 		require_once('dbConnect.php');
 		
 		
-		$sql = "SELECT * FROM ms_user $where";
+		$sql = "SELECT * FROM ms_user";
 		
 		$r = mysqli_query($con,$sql);
 		$data=array();

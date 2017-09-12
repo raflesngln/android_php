@@ -1,6 +1,6 @@
 <?php
 	
-	$server		= "10.0.0.28"; // sesuaikan alamat server anda
+	$server		= "116.206.197.194:23500"; // sesuaikan alamat server anda
 	$user		= "wisnu"; // sesuaikan user web server anda
 	$password	= "baldas"; // sesuaikan password web server anda
 	$database	= "test"; // sesuaikan database web server anda

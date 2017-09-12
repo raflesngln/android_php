@@ -1,5 +1,5 @@
 <?php
- define('HOST','10.0.0.28');
+ define('HOST','116.206.197.194:23500');
  define('USER','wisnu');
  define('PASS','baldas');
  define('DB','test');

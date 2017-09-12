@@ -2,7 +2,7 @@
 
 <?php
 
-$db_server="10.0.0.28";
+$db_server="116.206.197.194:23500";
 $db_user="wisnu";
 $db_pass="baldas";
 $db="test";

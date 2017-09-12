@@ -1,0 +1,5 @@
+1. copy folder android di web server anda, kemudian edit koneksi.php dan sesuaikan.
+2. buka android studio, kemudian open project KuncoroCRUD
+3. buat database kuncoro_crud kemudian import file *.sql
+
+Selemat mencoba ^_^ https://dedykuncoro.com 

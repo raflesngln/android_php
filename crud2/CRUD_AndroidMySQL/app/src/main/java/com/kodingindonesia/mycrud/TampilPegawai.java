@@ -40,8 +40,8 @@ public class TampilPegawai extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tampil_pegawai);
 
+        //Mengabil data konfigurasi yg dilempar dari class TampilSemuaPgw
         Intent intent = getIntent();
-
         id = intent.getStringExtra(konfigurasi.EMP_ID);
 
         editTextId = (EditText) findViewById(R.id.editTextId);
@@ -54,9 +54,9 @@ public class TampilPegawai extends AppCompatActivity implements View.OnClickList
 
         buttonUpdate.setOnClickListener(this);
         buttonDelete.setOnClickListener(this);
-
+        //set value editTextId dari hasil lempar class
         editTextId.setText(id);
-
+        //tampilkan value dari edit data
         getEmployee();
     }
 

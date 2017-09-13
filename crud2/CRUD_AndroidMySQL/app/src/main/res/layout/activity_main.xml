@@ -1,10 +1,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_height="match_parent" android:paddingLeft="16dp"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:paddingBottom="16dp" tools:context=".MainActivity">
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID Pegawai" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextId" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -43,9 +57,16 @@
         android:id="@+id/buttonAdd" />
 
     <Button
+        android:id="@+id/buttonView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Daftar Pegawai"
-        android:id="@+id/buttonView" />
+        android:text="Daftar Pegawai" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabCek"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_plus"/>
 
 </LinearLayout>

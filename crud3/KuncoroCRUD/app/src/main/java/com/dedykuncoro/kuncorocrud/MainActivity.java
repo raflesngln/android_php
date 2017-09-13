@@ -2,6 +2,7 @@ package com.dedykuncoro.kuncorocrud;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -38,7 +39,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
 
     Toolbar toolbar;
-    FloatingActionButton fab;
+    FloatingActionButton fab,fab2;
     ListView list;
     SwipeRefreshLayout swipe;
     List<Data> itemList = new ArrayList<Data>();
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
         // menghubungkan variablel pada layout dan pada java
         fab     = (FloatingActionButton) findViewById(R.id.fab_add);
+        fab2     = (FloatingActionButton) findViewById(R.id.fab_add2);
         swipe   = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
         list    = (ListView) findViewById(R.id.list);
 
@@ -101,6 +103,14 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             @Override
             public void onClick(View view) {
                 DialogForm("", "", "", "SIMPAN");
+            }
+        });
+
+        // fungsi floating action button 2 memanggil form kontak
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AddData.class));
             }
         });
 

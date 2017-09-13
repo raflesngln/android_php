@@ -16,6 +16,7 @@ public class konfigurasi {
     public static final String URL_GET_EMP = "http://192.168.10.33/android_php/crud2/tampilPgw.php?id=";
     public static final String URL_UPDATE_EMP = "http://192.168.10.33/android_php/crud2/updatePgw.php";
     public static final String URL_DELETE_EMP = "http://192.168.10.33/android_php/crud2/hapusPgw.php?id=";
+    public static final String URL_CEK_EMP = "http://192.168.10.33/android_php/crud2/cekPgw.php?id=";
 
     //Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP
     public static final String KEY_EMP_ID = "id";

@@ -1,11 +1,14 @@
 <?php
+ // define('HOST','116.206.197.194:23500');
+ // define('USER','wisnu');
+ // define('PASS','baldas');
+ // define('DB','test');
 
-/*
- * All database connection variables
- */
+ define('HOST','localhost');
+ define('USER','root');
+ define('PASS','');
+ define('DB','androidapp');
 
-define('DB_USER', "wisnu"); // db user
-define('DB_PASSWORD', "baldas"); // db password (mention your db password here)
-define('DB_DATABASE', "test"); // database name
-define('DB_SERVER', "116.206.197.194:23500"); // db server
-?>
+ $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
+
+ ?>

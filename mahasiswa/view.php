@@ -12,3 +12,4 @@ if($_SERVER['REQUEST_METHOD']=='GET') {
   echo json_encode(array("value"=>1,"result"=>$result));
   mysqli_close($con);
 }
+?>

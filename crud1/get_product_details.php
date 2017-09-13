@@ -1,72 +1,39 @@
 <?php
 
-/*
- * Following code will get single product details
- * A product is identified by product id (pid)
- */
+       include "db_config.php";
 
-// array for JSON response
-$response = array();
+        //Mendapatkan Nilai npm
+        $pid = $_GET['pid'];
 
 
-// include db connect class
-require_once __DIR__ . '/db_connect.php';
 
-// connecting to db
-$db = new DB_CONNECT();
+        //Membuat SQL Query dengan pegawai yang ditentukan secara spesifik sesuai ID
+        $sql = "SELECT *FROM products WHERE pid = '$pid'";
 
-// check for post data
-if (isset($_GET["pid"])) {
-    $pid = $_GET['pid'];
+        //Mendapatkan Hasil
+        $r = mysqli_query($con,$sql);
 
-    // get a product from products table
-    $result = mysql_query("SELECT *FROM products WHERE pid = $pid");
+        //Memasukkan Hasil Kedalam Array
+        $result = array();
+        $row = mysqli_fetch_array($r);
+        array_push($result,array(
+                        "pid"=>$row['pid'],
+                        "name"=>$row['name'],
+                        "price"=>$row['price'],
+                        "description"=>$row['description'],
+                        "created_at"=>$row['created_at'],
+                        "updated_at"=>$row['updated_at']
+                ));
 
-    if (!empty($result)) {
-        // check for empty result
-        if (mysql_num_rows($result) > 0) {
+                //Menampilkan dalam format JSON
+        //echo json_encode(array('result'=>$result));
+$jumlah=mysqli_num_rows($r);
 
-            $result = mysql_fetch_array($result);
-
-            $product = array();
-            $product["pid"] = $result["pid"];
-            $product["name"] = $result["name"];
-            $product["price"] = $result["price"];
-            $product["description"] = $result["description"];
-            $product["created_at"] = $result["created_at"];
-            $product["updated_at"] = $result["updated_at"];
-            // success
-            $response["success"] = 1;
-
-            // user node
-            $response["product"] = array();
-
-            array_push($response["product"], $product);
-
-            // echoing JSON response
-            echo json_encode($response);
-        } else {
-            // no product found
-            $response["success"] = 0;
-            $response["message"] = "No product found";
-
-            // echo no users JSON
-            echo json_encode($response);
-        }
-    } else {
-        // no product found
-        $response["success"] = 0;
-        $response["message"] = "No product found";
-
-        // echo no users JSON
-        echo json_encode($response);
-    }
-} else {
-    // required field is missing
-    $response["success"] = 0;
-    $response["message"] = "Required field(s) is missing";
-
-    // echoing JSON response
-    echo json_encode($response);
+        if($jumlah >=1){
+        echo json_encode(array("success"=>1,"product"=>$result,"jumlah"=>$jumlah));
+        mysqli_close($con);
+} else{
+        echo json_encode(array("success"=>0,"message"=>'No product found',"jumlah"=>$jumlah));
+        mysqli_close($con);
 }
 ?>

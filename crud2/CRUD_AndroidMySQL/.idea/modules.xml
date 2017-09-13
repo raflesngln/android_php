@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CRUD_AndroidMySQL.iml" filepath="$PROJECT_DIR$/CRUD_AndroidMySQL.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MyCRUD.iml" filepath="$PROJECT_DIR$/MyCRUD.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

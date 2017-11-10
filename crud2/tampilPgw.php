@@ -25,8 +25,8 @@
 	array_push($result,array(
 			"id"=>$row['id'],
 			"name"=>$row['nama'],
-			"desg"=>$row['posisi'],
-			"salary"=>$row['gajih']
+			"alamat"=>$row['alamat'],
+			"jabatan"=>$row['jabatan']
 		));
 
 	//Menampilkan dalam format JSON

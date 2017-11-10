@@ -10,8 +10,8 @@
 		//MEndapatkan Nilai Dari Variable
 		$id = $_POST['id'];
 		$name = $_POST['name'];
-		$desg = $_POST['desg'];
-		$sal = $_POST['salary'];
+		$alamat = $_POST['alamat'];
+		$jabatan = $_POST['jabatan'];
 
 		//import file koneksi database
 		require_once('koneksi.php');
@@ -23,7 +23,7 @@
 		
 		if (mysqli_num_rows($r) > 0) {
 				//Membuat SQL Query
-				$sql2 = "UPDATE tb_pegawai SET nama = '$name', posisi = '$desg', gajih = '$sal' WHERE id = $id;";
+				$sql2 = "UPDATE tb_pegawai SET nama = '$name', alamat = '$alamat', jabatan = '$jabatan' WHERE id = $id;";
 				//Meng-update Database
 				if(mysqli_query($con,$sql2)){
 					echo json_encode(array("success"=>1,"message"=>'Data Berhasil Update'));

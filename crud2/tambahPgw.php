@@ -15,8 +15,8 @@
 		//Mendapatkan Nilai Variable
 		$id = $_POST['id'];
 		$name = $_POST['name'];
-		$desg = $_POST['desg'];
-		$sal = $_POST['salary'];
+		$alamat = $_POST['alamat'];
+		$jabatan = $_POST['jabatan'];
 
 		//cek id sudah tersedia belum
 		$sql = "SELECT * FROM tb_pegawai WHERE id=$id";
@@ -26,7 +26,7 @@
  		} else{
 
 		//Jika belum ada data di DB dengan ID ini
-		$sql2 = "INSERT INTO tb_pegawai (id,nama,posisi,gajih) VALUES ('$id','$name','$desg','$sal')";
+		$sql2 = "INSERT INTO tb_pegawai (id,nama,alamat,jabatan) VALUES ('$id','$name','$alamat','$jabatan')";
 		//Eksekusi Query database
 		if(mysqli_query($con,$sql2)){
 			//echo 'Berhasil Menambahkan Pegawai';

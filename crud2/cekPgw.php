@@ -24,8 +24,9 @@
 				array_push($result,array(
 						"id"=>$row['id'],
 						"name"=>$row['nama'],
-						"desg"=>$row['posisi'],
-						"salary"=>$row['gajih']
+						"alamat"=>$row['alamat'],
+						"status"=>$row['status'],
+						"jabatan"=>$row['jabatan']
 					));
 				//Menampilkan dalam format JSON
 				echo json_encode(array("success"=>1,"message"=>'Data Ditemukan','result'=>$result));

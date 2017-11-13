@@ -37,7 +37,7 @@ class FileHandler
 
     public function getAllFiles()
     {
-        $stmt = $this->con->prepare("SELECT id, description, url FROM images ORDER BY id DESC");
+        $stmt = $this->con->prepare("SELECT id, description, image FROM images ORDER BY id DESC");
         $stmt->execute();
         $stmt->bind_result($id, $desc, $url);
 
